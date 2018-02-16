@@ -11,7 +11,7 @@ $(document).ready(() => {
 
         setTimeout(()=>{
           //$('.contain3').html('')
-          $('h2').append('<a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"><span style="font-size: 65%"> (random)</span></a>')
+          $('h2').append('<span style="font-size: 65%"><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"> (random)</a></span>')
         },1000)       
         this.centerRandomRemoved = true
       }
