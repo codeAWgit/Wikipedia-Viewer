@@ -20,13 +20,12 @@ $(document).ready(() => {
       
          setTimeout(()=>{
            $('.contain3').html('')
+            $('.contain3').removeClass("animated fadeOut")
+           $('.contain3').html('<div class="col wikiResults"></div>') 
            for(let i=0; i<10; i++){
-           $('.contain3').removeClass("animated fadeOut")
-          $('.contain3').append('<div class="row"><div class="col results"><h4>' + entry.searchFor + ' Now is that time for all good men.</h4></div></div>')
+                $('.wikiResults').append('<h4>' + entry.searchFor + ' Now is that time for all good men.</h4>')
            }
         },1000)
-        
-    
   }
 }                              
 
