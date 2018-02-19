@@ -49,33 +49,34 @@ $(document).ready(() => {
         
         for(let i = 0; i < 10; i++){
             $('.wikiResults').append('<div class="eachResult"><span class="title">' + 
-                    entry.searchResults.search[i].title + '</span><span class="desc"> : ' +
-                    entry.searchResults.search[i].snippet +'</span></div>')
-                    debugger
+                    entry.searchResults.search[i].title + 
+                    '</span><span class="desc"> : ' +
+                    entry.searchResults.search[i].snippet + 
+                    '</span></div>')
         }
-    },1000)
-  }
-}                              
-        // Section handles Enter keypress and Search button click
-        $('#entry').keypress( x => {
-            if ( x.charCode == 13 && $('#entry').val() ) {
-                keyEnterSubmit()
-            }
-        })
-        
-        $('#submit').on('click', () => {
-            if ( $('#entry').val() ) {
-                keyEnterSubmit()
-            }
-        })
+      },1000)
+    }
+  }                              
+    // Section handles Enter keypress and Search button click
+    $('#entry').keypress( x => {
+        if ( x.charCode == 13 && $('#entry').val() ) {
+            keyEnterSubmit()
+        }
+    })
+    
+    $('#submit').on('click', () => {
+        if ( $('#entry').val() ) {
+            keyEnterSubmit()
+        }
+    })
 
-        // Section handles the main manipulation of the html and script work after entry.
-        let keyEnterSubmit = () => {
-            entry.searchFor = $('#entry').val()
-            entry.removeRandom()
-            entry.search()
-            entry.showSearch()
-        }
+    // Section handles the main manipulation of the html and script work after entry.
+    let keyEnterSubmit = () => {
+        entry.searchFor = $('#entry').val()
+        entry.removeRandom()
+        entry.search()
+        entry.showSearch()
+    }
         
  /* $.ajax( {
     url: 'https://en.wikipedia.org/w/api.php?',
