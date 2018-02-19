@@ -18,12 +18,21 @@ h5 {
   padding: 15px;
 }
 .contain3{
-  padding: 55px;
+  padding-top: 55px;
 }
 .random{
   font-size: 115%;
   font-family: Old News, Georgia;
 }
+.eachResult{
+  padding: 5px 0px 15px 0px;
+}
+.title{
+  font-size: 150%
+} 
+.desc{
+  font-size: 125%
+} 
 #randomButton {
   margin-top: 15px;
   font-size: 130%;

@@ -9,27 +9,30 @@ $(document).ready(() => {
       if(!this.centerRandomRemoved){
         $('.contain3').addClass("animated fadeOut")
 
-        setTimeout(()=>{
-          //$('.contain3').html('')
+        setTimeout(() => {
           $('h2').append('<span style="font-size: 65%"><a href="https://en.wikipedia.org/wiki/Special:Random" target="_blank"> (random)</a></span>')
         },1000)       
         this.centerRandomRemoved = true
       }
     },
+
     showSearch: () => {
-      
-         setTimeout(()=>{
+         setTimeout(() => {
            $('.contain3').html('')
-            $('.contain3').removeClass("animated fadeOut")
+           $('.contain3').removeClass("animated fadeOut")
+           $('.contain3').css("padding","20px 0px 0px 30px")
            $('.contain3').html('<div class="col wikiResults"></div>') 
-           for(let i=0; i<10; i++){
-                $('.wikiResults').append('<h4>' + entry.searchFor + ' Now is that time for all good men.</h4>')
+           
+           for(let i = 0; i < 10; i++){
+                $('.wikiResults').append('<div class="eachResult"><span class="title">' + 
+                    'Title</span><span class="desc"> : Wiki information for ' +
+                    'one of the search results.</span></div>')
            }
         },1000)
   }
 }                              
-
-        $('#entry').keypress(x => {
+        // Section handles Enter keypress and Search button click
+        $('#entry').keypress( x => {
             if(x.charCode == 13 && $('#entry').val()){
                 keyEnterSubmit()
             }
@@ -41,6 +44,7 @@ $(document).ready(() => {
             }
         })
 
+        // Section handles the main manipulation of the html and script work after entry.
         let keyEnterSubmit = () => {
          // if(entry.searchFor != $('#wikiEntry').val()){
             entry.searchFor = $('#entry').val()
@@ -50,14 +54,6 @@ $(document).ready(() => {
          // }
           
         }
-    
-        //1.Check wikipedia for search results.
-        //2.Have JSON object in variable to work with.
-        //3.Create divs where search results will go to for display.
-        //4.Allow for the search the be completed again.
-        //5.Style divisions.
-        //6.
-        
         
  /* $.ajax( {
     url: 'https://en.wikipedia.org/w/api.php?',
@@ -78,13 +74,6 @@ $(document).ready(() => {
 });*/
     
 })
-        
-
-
-    
-
-
-
 
 /*
 
@@ -105,10 +94,4 @@ $(document).ready(function(){
   });
 });
 */
-    
-
-
-
-
-
 
