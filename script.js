@@ -5,6 +5,7 @@ $(document).ready(() => {
   "use strict"
         
   let entry = {
+    searchResults: '',
     removeRandom: () => {
       if(!this.centerRandomRemoved){
         $('.contain3').addClass("animated fadeOut")
@@ -27,7 +28,8 @@ $(document).ready(() => {
         headers: { 'Api-User-Agent': 'Example/1.0' },
         success: function(data) {
              //alert(data.query.search[0].title + '<br/><br/>' + data.query.search[0].snippet)
-             this.searchResults = data
+                entry.searchResults = data.query
+                debugger
         }
     } )
       .fail( function() {
@@ -46,11 +48,10 @@ $(document).ready(() => {
         $('.contain3').html('<div class="col wikiResults"></div>') 
         
         for(let i = 0; i < 10; i++){
-          debugger
             $('.wikiResults').append('<div class="eachResult"><span class="title">' + 
-                this.searchResults.query.search[i].title + '</span><span class="desc">' +
-                + this.searchResults.query.search[i].snippet +'</span></div>')
-                
+                    entry.searchResults.search[i].title + '</span><span class="desc"> : ' +
+                    entry.searchResults.search[i].snippet +'</span></div>')
+                    debugger
         }
     },1000)
   }
@@ -70,13 +71,10 @@ $(document).ready(() => {
 
         // Section handles the main manipulation of the html and script work after entry.
         let keyEnterSubmit = () => {
-         // if(entry.searchFor != $('#wikiEntry').val()){
             entry.searchFor = $('#entry').val()
             entry.removeRandom()
             entry.search()
             entry.showSearch()
-         // }
-          
         }
         
  /* $.ajax( {
@@ -119,7 +117,9 @@ $(document).ready(function(){
 });
 */
 
-// let exampleData = {
+let exampleData 
+// = 
+// {
 //  "batchcomplete":true,
 //  "continue":{"sroffset":10,"continue":"-||revisions"},
 //  "query":{"searchinfo":{"totalhits":224474},
