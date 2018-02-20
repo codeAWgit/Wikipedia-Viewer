@@ -44,22 +44,23 @@ $(document).ready(() => {
       setTimeout( () => {
         $('.contain3').html('')
         $('.contain3').removeClass("animated fadeOut")
-        $('.contain3').css("padding","20px 0px 0px 30px")
-        $('.contain3').html('<div class="col wikiResults"></div>') 
+        $('.contain3').css("padding","20px 0px 0px 0px")
+        $('.contain3').html('<div class="col-md-1"></div><div class=' +
+                    '"col-md-10 wikiResults"></div><div class="col-md-1"></div>') 
         
         for(let i = 0; i < 10; i++){
             $('.wikiResults').append('<div class="eachResult"><span class="title">' + 
                     entry.searchResults.search[i].title + 
-                    '</span><span class="desc"> : ' +
+                    '</span> :<span class="desc"> ' +
                     entry.searchResults.search[i].snippet + 
-                    '</span></div>')
+                    ' ...</span></div>')
         }
       },1000)
     }
   }                              
     // Section handles Enter keypress and Search button click
     $('#entry').keypress( x => {
-        if ( x.charCode == 13 && $('#entry').val() ) {
+        if ( x.charCode === 13 && $('#entry').val() ) {
             keyEnterSubmit()
         }
     })
@@ -77,7 +78,8 @@ $(document).ready(() => {
         entry.search()
         entry.showSearch()
     }
-        
+  }) 
+
  /* $.ajax( {
     url: 'https://en.wikipedia.org/w/api.php?',
     data: 'action=query&list=search&srsearch=dog&prop=revisions&rvprop=content&format=json&formatversion=2',
@@ -96,7 +98,7 @@ $(document).ready(() => {
   console.log('Done');
 });*/
     
-})
+
 
 /*
 
@@ -118,7 +120,7 @@ $(document).ready(function(){
 });
 */
 
-let exampleData 
+// let exampleData 
 // = 
 // {
 //  "batchcomplete":true,

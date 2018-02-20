@@ -3,7 +3,7 @@ a:link,a:hover,a:visited{
 }
 body{
   background-color: antiquewhite;
-  margin: 55px;
+  margin-top: 55px;
 }
 button {
   font-family: November, Arial;
@@ -13,9 +13,12 @@ h2 {
 }    
 h5 {
   padding-left: 120px;
-}      
+}  
+.container{
+  padding: 0px 20px;
+}    
 .contain2{
-  padding: 15px;
+  padding: 15px 0px;
 }
 .contain3{
   padding-top: 55px;
@@ -25,15 +28,19 @@ h5 {
   font-family: Old News, Georgia;
 }
 .eachResult{
-  padding: 5px 0px 15px 0px;
+  padding: 5px 0px 25px 0px;
 }
 .title{
-  font-size: 150%
+  font-size: 160%;
 } 
 .desc{
-  font-size: 125%
+  font-size: 120%;
+  padding: 0px 0px 0px 10px;
 } 
 #randomButton {
   margin-top: 15px;
   font-size: 130%;
+}
+#entry{
+  width: 250px;
 }
